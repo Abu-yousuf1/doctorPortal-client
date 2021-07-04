@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 
+
 const customStyles = {
   content: {
     top: '50%',
@@ -23,6 +24,7 @@ const AppointmentModal = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
 
+
   const onSubmit = data => {
     data.service = appointmentOn;
     data.date = date;
@@ -37,7 +39,7 @@ const AppointmentModal = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
     .then(success => {
       if(success){
         closeModal();
-        alert('appointment successfully')
+       
       }
     })
 
